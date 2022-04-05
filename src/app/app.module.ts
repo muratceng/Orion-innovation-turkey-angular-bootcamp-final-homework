@@ -19,6 +19,7 @@ import { CardDetailsComponent } from './Pages/CardDetails/CardDetails.component'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NotFoundComponent } from './Pages/NotFound/NotFound.component';
 import { AdminProductsComponent } from './Pages/AdminProducts/admin-products.component';
+import {TableModule} from 'primeng/table';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { AdminProductsComponent } from './Pages/AdminProducts/admin-products.com
     RouterModule,
     NgbModule,
     FontAwesomeModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
