@@ -20,6 +20,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NotFoundComponent } from './Pages/NotFound/NotFound.component';
 import { AdminProductsComponent } from './Pages/AdminProducts/admin-products.component';
 import {TableModule} from 'primeng/table';
+import { AddProductComponent } from './Pages/AddProduct/add-product.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import {TableModule} from 'primeng/table';
     CarouselComponent,
     CardDetailsComponent,
     NotFoundComponent,
-    AdminProductsComponent
+    AdminProductsComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,20 @@
 <Navbar-selector></Navbar-selector>
 
 <div class="container">
-<p-table [value]="products" responsiveLayout="scroll" [rows]="10" [paginator]="true">
+<p-table #dt1 [value]="products" responsiveLayout="scroll" [rows]="10" [paginator]="true" 
+[globalFilterFields]="['title','id','shortdescription','category','maincategory']" styleClass="p-datatable-gridlines" [loading]="loading">
+
+    <ng-template pTemplate="caption">
+        <div class="d-flex" style="justify-content: space-between;">
+            <span>
+                <button class="btn btn-primary"><fa-icon [icon]="faAdd"></fa-icon> Add Product</button>
+            </span>
+            <span class="p-input-icon-left ml-auto">
+                <input pInputText type="text" (input)="applyFilterGlobal($event, 'contains')" placeholder="Search keyword" />
+            </span>
+        </div>
+    </ng-template>
+
     <ng-template pTemplate="header">
         <tr>
             <th pSortableColumn="id">Id <p-sortIcon field="id"></p-sortIcon></th>
@@ -10,6 +23,7 @@
             <th pSortableColumn="price">Price <p-sortIcon field="price"></p-sortIcon></th>
             <th></th>
         </tr>
+        
     </ng-template>
     <ng-template pTemplate="body" let-product>
         <tr>
