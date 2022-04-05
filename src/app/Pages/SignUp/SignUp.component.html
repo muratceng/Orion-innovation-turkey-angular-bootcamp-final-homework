@@ -1,0 +1,115 @@
+<div class="d-flex align-items-center justify-content-center" style="height: 100vh; width: 100vw;">
+  <div class="container border border-secondary border-4 w-25">
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label class="form-label" for="name">Name: </label>
+        <input
+          id="name"
+          type="text"
+          class="form-control"
+          formControlName="name"
+          placeholder="Name"
+        />
+        <span
+          class="error"
+          *ngIf="
+            signUpForm.get('name')!.hasError('required') &&
+            signUpForm.get('name')!.touched
+          "
+        >
+          Name is required</span
+        >
+      </div>
+
+      <div class="">
+        <label for="email" class="form-label">Email: </label>
+        <input
+          id="email"
+          type="text"
+          class="form-control"
+          formControlName="email"
+          placeholder="example@test.com"
+        />
+        <span
+          class="error"
+          *ngIf="
+            signUpForm.get('email')!.hasError('required') &&
+            signUpForm.get('email')!.touched
+          "
+        >
+          Email is required</span
+        >
+        <span
+          class="error"
+          *ngIf="
+            signUpForm.get('email')!.hasError('email') &&
+            signUpForm.get('email')!.touched
+          "
+        >
+          Email is not valid</span
+        >
+      </div>
+
+      <div>
+        <label for="password" class="form-label">password: </label>
+        <input
+          id="password"
+          type="password"
+          class="form-control"
+          formControlName="password"
+        />
+        <span
+          class="error"
+          *ngIf="
+            signUpForm.get('password')!.hasError('required') &&
+            signUpForm.get('password')!.touched
+          "
+        >
+          Password is required</span
+        >
+      </div>
+
+      <div>
+        <label for="passwordCheck" class="form-label">Confirm password: </label>
+        <input
+          id="passwordCheck"
+          type="password"
+          class="form-control"
+          formControlName="passwordCheck"
+        />
+        <span
+          class="error"
+          *ngIf="
+            signUpForm.get('passwordCheck')!.hasError('required') &&
+            signUpForm.get('passwordCheck')!.touched
+          "
+        >
+          Confirm password is required</span
+        >
+        <span
+          class="error"
+          *ngIf="
+            passError &&
+            signUpForm.get('passwordCheck')!.touched
+          "
+        >
+          {{passError}}</span
+        >
+      </div>
+
+      <div class="text-center">
+        <button
+          type="submit"
+          class="btn btn-primary mt-2 mb-2"
+          [disabled]="!signUpForm.valid"
+        >
+          Sign Up
+        </button>
+      </div>
+
+      <div class="text-center">
+        <p (click)="signIn()" class="clickItem">I already have an account</p>
+      </div>
+    </form>
+  </div>
+</div>

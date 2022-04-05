@@ -1,0 +1,52 @@
+<nav class="navbar navbar-light" style="background-color: #e3f2fd">
+    <a (click)="goHome()" class="homeLink navbar-brand ms-5">
+      Murat Store
+    </a>
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+      <fa-icon [icon]="faShoppinCard"></fa-icon>
+        Shopping Card<span class="text-danger" *ngIf="shoppingCard.length>0">  {{shoppingCard.length}}</span> 
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1" *ngIf="shoppingCard.length>0">
+          <div class="container mt-5">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Product Title</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Delete Product</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr  *ngFor="let item of shoppingCard">
+                    <td>{{item.title}}</td>
+                    <td>{{item.price | currency:'TRY '}}</td>
+                    <td>
+                      {{item.quantity}}
+                    </td>
+                    <td><button (click)="deleteProduct(item.title)" class="btn btn-danger text-center"> X </button></td>
+                  </tr>
+                </tbody>
+              </table>
+        <button (click)="goDetails()" class="btn btn-primary mb-5 ms-5">Go Details</button>
+
+          </div>
+        
+      </div>
+
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1"  *ngIf="!(shoppingCard.length>0)"  >
+        <div class="container w-100 ">
+      <p>There are no items in your Shopping Card
+      </p>
+        </div>
+      </div>
+
+
+    </div>
+    <button class="navbar-brand btn btn-link border border-secondary me-5" (click)="logOut()">
+      <span><fa-icon [icon]="falogout"></fa-icon></span>
+      logout
+    </button>
+
+  </nav>

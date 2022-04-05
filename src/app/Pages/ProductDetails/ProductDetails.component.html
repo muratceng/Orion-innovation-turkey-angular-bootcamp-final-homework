@@ -1,0 +1,26 @@
+<Navbar-selector></Navbar-selector>
+<div class="container mb-5" *ngIf="product != null">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>{{ product.title }}</h1>
+    </div>
+    <Carousel-selector
+      class="col-sm-12 col-md-6 col-lg-6 mt-5"
+      [images]="product.images"
+    ></Carousel-selector>
+
+    <div class="col-sm-12 col-md-6 col-lg-6 mt-5">
+      <p>{{ product.description }}</p>
+      <p class="text-center mt-auto">
+        <span class="card-text price mt-auto"> {{product.price | currency:'TRY '}} </span>
+        </p>
+      <div class="text-center">
+        <button (click)="addToCard()" class="btn btn-primary">Add To Card</button>
+      </div>
+      <div *ngIf="showMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+        Product added to Card
+      </div>
+    </div>
+  </div>
+</div>
+<Footer-selector></Footer-selector>

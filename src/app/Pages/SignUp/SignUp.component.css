@@ -1,0 +1,8 @@
+.clickItem{
+    cursor:pointer;
+    text-decoration: underline;
+}
+
+.error{
+    color: red;
+}

@@ -1,0 +1,334 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "name": "murat",
+      "email": "murat@test.com",
+      "password": "12"
+    },
+    {
+      "id": 2,
+      "name": "ahmet",
+      "email": "ahmet@test.com",
+      "password": "123456"
+    },
+    {
+      "id": 3,
+      "name": "mehmet",
+      "email": "mehmet@test.com",
+      "password": "123456"
+    },
+    {
+      "id": 4,
+      "name": "ayşe",
+      "email": "ayşe@test.com",
+      "password": "123456"
+    },
+    {
+      "name": "deneme",
+      "email": "deneme@test.com",
+      "password": "3455666",
+      "id": 6
+    },
+    {
+      "name": "deneme",
+      "email": "asdsa@test.com",
+      "password": "5678",
+      "id": 7
+    },
+    {
+      "name": "buket",
+      "email": "buket@test.com",
+      "password": "123",
+      "id": 8
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "VESTEL Televizyon",
+      "shortdescription": "VESTEL 50U9600 50 127 Ekran Uydu Alıcılı 4K Ultra HD Smart LED TV TV-U9600",
+      "description": "PC, Mobil Cihaz Veya Tabletinizi Rahatça Ekranda Paylaşın! Uyumlu cihazlarınız ile kablosuz ekran paylaşımı yaparak cihazınızın içeriğini geniş TV ekranına taşıyabilirsiniz. Akıllı, Keyifli, Zengin Standart bir televizyon ötesinde, birbirinden farklı içerik alternatifleri sunan Vestel Smart TV evde geçirdiğiniz zamanı daha eğlenceli hale getirir.",
+      "images": [
+        "https://cdn.dsmcdn.com/ty299/product/media/images/20220119/8/28105255/212029098/2/2_org_zoom.jpg",
+        "https://cdn.dsmcdn.com/ty148/product/media/images/20210726/12/112572536/212029098/1/1_org_zoom.jpg",
+        "https://cdn.dsmcdn.com/ty297/product/media/images/20220119/8/28105258/212029098/2/2_org_zoom.jpg"
+      ],
+      "price": 6139.17,
+      "maincategory": "Electronic",
+      "category": "Television"
+    },
+    {
+      "id": 2,
+      "title": "Eymense Antrasit Loft Köşe Koltuk Takımı",
+      "shortdescription": "Evinizin havasını değiştirecek modern, kaliteli ve şık köşe koltuk takımı.",
+      "description": "Takım İçeriği: 1 köşe koltuk Sevk: Tahmini sevk süresi 10-15 iş günüdür. Nakliye Durumu:Ürünler bina önüne teslim edilmektedir. Köylereteslimat yapılmamaktadır. Şehir veya ilçe merkezlerinden teslim alabilirsiniz Kumaş İçeriği: Poliüretan ve akrilik türevlerinden oluşan polyesteriçerikli kumaş kullanılmıştır. Oturum Minderi Malzemesi 30 DNS gri sünger kullanılmıştır İskelet Malzemesi: Gürgen ağacından oluşmaktadır. Ayak Rengi: Beyaz + Ceviz + siyah olarak değiştirilebilir Yön: Ters ve Düz olarak yöndeğiştirilebilir. Ayak Tipi: Yerden Yüksek 10 cm Ek Bilgiler: Koltuk ayak kısımları plastiktir ve zemine zarar vermez.Kalitesi oldukça yüksektir. 2- 2 yıl çökmeme garantili oturum.30 DNS 12 cm sünger kullanılmaktadır. 3- Kullanılan kumaşların tamamıithal silinebilir kumaşlardır. Sabunlu bez ile silinebilir ve arkasındankurulayarak temizlik işlemi sonlandırılır. Lekelere karşı dayanıklı ve sonderece kaliteli kumaşlardır. 4- Ürün ile birlikte 4 Adet kırlentgönderilmektedir. Kırlentler 45x45 cm ölçülerindedir. Ürün Ölçüleri Köşe Ölçüleri Yükseklik: 80 cm / Genişlik:230/280cm / Derinlik: 90 cm Yatak Ölçüleri Genişlik: 190 cm / Derinlik: 125cm KOLLU KISIM DIŞTAN DIŞA 230 CM KOLSUZ KISIM DIŞTAN DIŞA 280 CM",
+      "images": [
+        "https://cdn.dsmcdn.com/ty110/product/media/images/20210430/19/84146139/169074353/1/1_org_zoom.jpg",
+        "https://cdn.dsmcdn.com/ty110/product/media/images/20210430/19/84146139/169074353/2/2_org_zoom.jpg",
+        "https://cdn.dsmcdn.com/ty110/product/media/images/20210430/19/84146139/169074353/3/3_org_zoom.jpg"
+      ],
+      "price": 4126.32,
+      "maincategory": "HomeandFurniture",
+      "category": "Furniture"
+    },
+    {
+      "id": 3,
+      "title": "Head And Shoulders Clinical Strength Şampuan 400 ml",
+      "shortdescription": "Saçlardaki kepek sorununun giderilmesi için geliştirilmiştir.",
+      "description": "Head & Shoulders Clinical Strength 400 ml şampuan, saçlardaki kepek sorununun giderilmesi için geliştirilmiş olan bir üründür. Düzenli kullanımda kepek oluşumunu ve görünümünü büyük bir oranda azaltır. Günümüzde pek çok birey, bu problemden şikâyetçidir. Head and Shoulders Clinical Strength şampuan, kepek sorununu ortadan kaldırdığı için bireylerin favorileri arasında yer alır. Bu ürün, ilk yıkamadan itibaren etkisini göstermeye başlar. Saç yapısını ve özgüveni önemli ölçüde etkileyen kepek sorunu, bu şampuan sayesinde ortadan kalkar. Bu ürünün özenle geliştirilmiş olan pH dengeli formülü, günlük kullanımı mümkün kılar.",
+      "images": [
+        "https://cdn.dsmcdn.com/ty112/product/media/images/20210507/15/86668843/22085594/1/1_org_zoom.jpg",
+        "https://cdn.dsmcdn.com/ty113/product/media/images/20210507/15/86668880/22085594/1/1_org_zoom.jpg"
+      ],
+      "price": 128.68,
+      "maincategory": "Cosmetic",
+      "category": "Shampoo"
+    },
+    {
+      "id": 4,
+      "title": "Yumy Ahşap El Yapımı Kontra Frenli Yetişkin Bisikleti",
+      "shortdescription": "El Yapımı Kontra Frenli Yetişkin Bisikleti.",
+      "description": "YUMY Kestane Ağacı Ahşabından Üretilmiş El Yapımı Kontra Frenli Yetişkin Bisikleti. 26 Jant Paslanmaz Çelik Jantlı, Retro Beyaz Bantlı Tekerlekli.",
+      "images": [
+        "https://cdn.dsmcdn.com/ty263/product/media/images/20211203/9/3452350/328338841/5/5_org_zoom.jpg",
+        "https://cdn.dsmcdn.com/ty262/product/media/images/20211203/9/3452350/328338841/3/3_org_zoom.jpg",
+        "https://cdn.dsmcdn.com/ty263/product/media/images/20211203/9/3452350/328338841/5/5_org_zoom.jpg"
+      ],
+      "price": 19500,
+      "maincategory": "Sport",
+      "category": "Bike"
+    },
+    {
+      "id": 5,
+      "title": "Deri Ceket",
+      "shortdescription": "SM CLOTHİNG Erkek Siyah Karbon Deri Ceket 0202",
+      "description": "SM CLOTHİNG Erkek Siyah Karbon Deri Ceket 0202",
+      "images": [
+        "https://cdn.dsmcdn.com/ty349/product/media/images/20220307/9/63895027/395070985/2/2_org_zoom.jpg",
+        "https://cdn.dsmcdn.com/ty349/product/media/images/20220307/9/63895027/395070985/3/3_org_zoom.jpg"
+      ],
+      "price": 289.99,
+      "maincategory": "Clothes",
+      "category": "Jacket"
+    },
+    {
+      "id": 6,
+      "title": "Huawei MateBook D15",
+      "shortdescription": "Huawei MateBook D15 Laptop ile keyifli bir yolculuğa merhaba deyin.",
+      "description": "Marka: Huawei Ürün ailesi: MateBook Ürün adı: D15 Ürün kodu: 6901443413638 EAN/UPC kodu: 6901443413638 Windows 10 Home 64-bit Intel Core i5-10210U (6MB Cache, 1.6GHz) 39.6 cm (15.62) Full HD 1920 x 1080 IPS 8GB (2400MHz) DDR4-SDRAM & 256GB SSD",
+      "images": [
+        "https://cdn.dsmcdn.com/ty30/product/media/images/20201207/14/35612223/116495222/1/1_org_zoom.jpg",
+        "https://cdn.dsmcdn.com/ty29/product/media/images/20201207/14/35612223/116495222/2/2_org_zoom.jpg"
+      ],
+      "price": 7885.66,
+      "maincategory": "Electronic",
+      "category": "Laptop"
+    },
+    {
+      "id": 7,
+      "title": "Tulü Porselen Tulu 24 Parça Yemek Seti Db00494",
+      "shortdescription": "Tulu Porselen 24 Parça 6 Kişilik Yemek Takımı.",
+      "description": "Tulu Porselen 24 Parça 6 Kişilik Yemek Takımı 6 Adet Servis Tabak 6 Adet Yemek Tabak 6 Adet Pasta Tabak 6 Adet Çukur Kase Porselen Üründür-Bulaşık Makinesinde Yıkanabilir",
+      "images": [
+        "https://cdn.dsmcdn.com/ty126/product/media/images/20210609/19/98053610/185593817/1/1_org_zoom.jpg",
+        "https://cdn.dsmcdn.com/ty128/product/media/images/20210609/19/98053610/185593817/2/2_org_zoom.jpg",
+        "https://cdn.dsmcdn.com/ty126/product/media/images/20210609/19/98053610/185593817/3/3_org_zoom.jpg"
+      ],
+      "price": 429,
+      "maincategory": "HomeandFurniture",
+      "category": "Dinner set"
+    },
+    {
+      "id": 8,
+      "title": "Avon Little Black Dress Edp 50ml Kadın Parfüm",
+      "shortdescription": "İnce zevkinizi gösterin.",
+      "description": "İnce zevkinizi gösterin. Koku ailesi: Oryantal-Çiçeksi. Hanımeli, yasemin ve sandal ağacı. Klasik, ince zevkli ve gösterişli. ",
+      "images": [
+        "https://kozmetik.avon.com.tr/assets/tr-tr/images/product/prod_1197848_1_613x613.jpg",
+        "https://kozmetik.avon.com.tr/assets/tr-tr/images/product/prod_1197848_2_613x613.jpg"
+      ],
+      "price": 65.36,
+      "maincategory": "Cosmetic",
+      "category": "Perfume"
+    },
+    {
+      "id": 9,
+      "title": "Avec Zero Dört Tekerlekli Led Işıklı Desenli Turuncu Kaykay ",
+      "shortdescription": "Dört tekerli ve led ışıklıdır Max 60 kg kadar taşıyabilmektedir",
+      "description": "Avec Zero Dört Tekerlekli Led Işıklı Desenli Turuncu Kaykay Ürün boyu 58 cm dir Ürün eni 15 cm dir Dört tekerli ve led ışıklıdır Max 60 kg kadar taşıyabilmektedir",
+      "images": [
+        "https://cdn.dsmcdn.com/ty165/product/media/images/20210827/15/123187748/234022378/0/0_org_zoom.jpg",
+        "https://cdn.dsmcdn.com/ty167/product/media/images/20210827/15/123187748/234022378/1/1_org_zoom.jpg",
+        "https://cdn.dsmcdn.com/ty167/product/media/images/20210827/15/123187748/234022378/2/2_org_zoom.jpg"
+      ],
+      "price": 159.9,
+      "maincategory": "Sport",
+      "category": "Skateboard"
+    },
+    {
+      "id": 10,
+      "title": "wamoss Erkek Gri Jogger Pantolon",
+      "shortdescription": "Manken boy :1.75 - Kilo 65 Normalde kullandığı beden : Small Dar kalıptır",
+      "description": "Manken boy :1.75 - Kilo 65 Normalde kullandığı beden : Small Dar kalıptır. Cep Tipi: Cepli, Bel: Jogger Lastik Bel, Kumaş/İplik Özellik: 2 İplik",
+      "images": [
+        "https://cdn.dsmcdn.com/ty326/product/media/images/20220206/11/45730127/184624455/1/1_org_zoom.jpg",
+        "https://cdn.dsmcdn.com/ty324/product/media/images/20220206/11/45730127/184624455/2/2_org_zoom.jpg"
+      ],
+      "price": 145.64,
+      "maincategory": "Clothes",
+      "category": "Pants"
+    },
+    {
+      "id": 11,
+      "title": "Sony Ps4 Slim 500 gb - Çift Kol",
+      "shortdescription": "Her zaman oyuncuları düşünen, olağanüstü oyun gücüne sahip, daha zarif ve daha küçük.",
+      "description": "Sony Playstation 4 Slim, orijinal PS4 modelinden %30 daha ince ve %16 daha hafiftir. İlk PS4’ün aksine yuvarlatılmış kenarları ve mat görünümüyle daha zariftir. PS4 Slim 26.5cm genişliğinde x 3.9cm yüksekliğinde x 28.8cm derinliğindeki küçük boyutuyla oldukça az bir alan kaplar. Yuvarlak kenarlarıyla beraber, karşınızda küçük ve kompakt bir cihaz bulunmaktadır. 500 GB seçeneği ile oyunlarınız, uygulamalarınız, ekran görüntüleriniz ve videolarınız için depolama alanı sağlar.",
+      "images": [
+        "https://productimages.hepsiburada.net/s/26/550/10166656565298.jpg/format:webp",
+        "https://productimages.hepsiburada.net/s/28/550/10232981946418.jpg/format:webp"
+      ],
+      "price": 4483.9,
+      "maincategory": "Electronic",
+      "category": "Playstation"
+    },
+    {
+      "id": 12,
+      "title": "Apliqa VioletSiyah Lambader 3lü",
+      "shortdescription": "En:52cm,Boy:172cm. Boyu boyu dilediğiniz şekilde ayarlanabilmektedir.",
+      "description": "En:52cm,Boy:172cm. Boyu boyu dilediğiniz şekilde ayarlanabilmektedir.Ürünümüzde, 3 adet ampul yeri bulunmaktadır.Ürün duy tipi:E27,olup,led ampul kullanabilme özelliğine sahiptir.Ürün meteryali Metal dir.Ürünümüz, siyah boyalıdır.Kullanım alanı Genç odası,Oturma odası,Yatak odası için uygundur. Ürün kuruluma hazır şekilde demonte edilmiştir.",
+      "images": [
+        "https://cdn.dsmcdn.com/ty185/product/media/images/20210928/10/136966804/172234694/1/1_org_zoom.jpg",
+        "https://cdn.dsmcdn.com/ty185/product/media/images/20210928/10/136966804/172234694/2/2_org_zoom.jpg"
+      ],
+      "price": 359.99,
+      "maincategory": "HomeandFurniture",
+      "category": "Lamp"
+    },
+    {
+      "id": 13,
+      "title": "Maybelline New York Lifter Gloss Nemlendirici Dudak Parlatıcısı-",
+      "shortdescription": "Hyaluronik asit içeren nemlendirici dudak parlatıcısı!",
+      "description": "Hyaluronik asit içeren nemlendirici dudak parlatıcısı! Dudaklara daha kalkık ve dolgun görünüm Gözle görünür şekilde pürüzsüz görünen dudaklar Yapışkan his bırakmayan formül Dudaklarda lifting etkisi",
+      "images": [
+        "https://cdn.dsmcdn.com/ty313/product/media/images/20220131/17/39774516/376779408/1/1_org_zoom.jpg",
+        "https://cdn.dsmcdn.com/ty314/product/media/images/20220131/17/39774516/376779408/2/2_org_zoom.jpg"
+      ],
+      "price": 71.94,
+      "maincategory": "Cosmetic",
+      "category": "Lipgloss"
+    },
+    {
+      "id": 14,
+      "title": "Srh Domyos Dambıl Seti 20 Kg",
+      "shortdescription": "Bu dambıl seti, evde kas geliştirme antrenmanları yapabilmeniz için tasarlandı.",
+      "description": "Bu dambıl seti, evde kas geliştirme antrenmanları yapabilmeniz için tasarlandı. Biseps, triseps, omuz ve göğüs kaslarını çalıştırarak yapılan çeşitli vücut geliştirme egzersizleri için ideal. Tırtıklı barı sayesinde her türlü antrenmanı güvenle yapın.",
+      "images": [
+        "https://cdn.dsmcdn.com/ty281/product/media/images/20211226/13/16638090/345200121/1/1_org_zoom.jpg",
+        "https://cdn.dsmcdn.com/ty279/product/media/images/20211226/13/16638090/345200121/2/2_org_zoom.jpg"
+      ],
+      "price": 918.9,
+      "maincategory": "Sport",
+      "category": "Dumbbell"
+    },
+    {
+      "id": 15,
+      "title": "Fenerbahçe İz Bırakanlar Triko Forma",
+      "shortdescription": "Mağazamızda gördüğünüz ürünlerimizin tamamı orjinal Fenerbahçe Lisanslı ürünleridir.",
+      "description": "%100 PAMUK 30 C'de yıkanabilir Ağartıcı kullanılmaz Santrifüjlü makinede kurutulmaz Ilık ütü yapınız Kuru temizleme yapılmaz",
+      "images": [
+        "https://cdn.dsmcdn.com/ty309/product/media/images/20220126/14/36491146/20658041/2/2_org_zoom.jpg",
+        "https://cdn.dsmcdn.com/ty311/product/media/images/20220126/14/36491151/20658041/2/2_org_zoom.jpg"
+      ],
+      "price": 300,
+      "maincategory": "Clothes",
+      "category": "T-shirt"
+    }
+  ],
+  "orders": [
+    {
+      "user_id": 1,
+      "products": [
+        {
+          "id": 2,
+          "quantity": 1
+        },
+        {
+          "id": 3,
+          "quantity": 1
+        },
+        {
+          "id": 4,
+          "quantity": 1
+        },
+        {
+          "id": 1,
+          "quantity": 1
+        }
+      ],
+      "price": 29894.17,
+      "id": 1
+    },
+    {
+      "user_id": 1,
+      "products": [
+        {
+          "id": 10,
+          "quantity": 1
+        },
+        {
+          "id": 11,
+          "quantity": 1
+        },
+        {
+          "id": 12,
+          "quantity": 1
+        },
+        {
+          "id": 15,
+          "quantity": 1
+        }
+      ],
+      "price": 5289.53,
+      "id": 2
+    },
+    {
+      "user_id": 1,
+      "products": [
+        {
+          "id": 3,
+          "quantity": 4
+        },
+        {
+          "id": 2,
+          "quantity": 3
+        },
+        {
+          "id": 6,
+          "quantity": 1
+        }
+      ],
+      "price": 20779.339999999997,
+      "id": 3
+    },
+    {
+      "user_id": 1,
+      "products": [
+        {
+          "id": 3,
+          "quantity": 1
+        },
+        {
+          "id": 2,
+          "quantity": 2
+        },
+        {
+          "id": 4,
+          "quantity": 2
+        }
+      ],
+      "price": 47381.32,
+      "id": 4
+    }
+  ]
+}

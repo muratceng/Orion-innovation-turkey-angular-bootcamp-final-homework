@@ -1,0 +1,32 @@
+<Navbar-selector></Navbar-selector>
+<!-- Filtering -->
+<div class="container text-center mt-5">
+  <!-- Example single danger button -->
+  <div  *ngFor="let items of categories"   ngbDropdown #myDrop="ngbDropdown" class="d-inline-block" (mouseenter)="$event.stopPropagation(); myDrop.open();" (mouseleave)="$event.stopPropagation(); myDrop.close();">
+    <button class="btn btn-outline-primary" id="dropdownBasic1"ngbDropdownToggle>{{items.mainCategory}}</button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+      <button ngbDropdownItem (click)="filterSubCategory(item)" *ngFor="let item of items.subCategories">{{item}}</button>
+    </div>
+    </div>
+
+  <button (click)="getAll()" class="btn btn-primary"> See All</button>
+
+  <form [formGroup]="searchForm"(ngSubmit)="onSubmit()">
+    <input type="text" class="" placeholder="Search"  formControlName="search">
+    <button type="submit" [disabled]="!searchForm.valid" class="btn btn-primary ms-1"><span><fa-icon [icon]="faSearch"></fa-icon></span> Search</button>
+  </form>
+
+</div>
+<!-- Cards -->
+<div class="container mt-5 mb-5">
+  <div class="row">
+      <card-selector class="col-sm-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let item of productList" [product]="item"></card-selector>
+  </div>
+</div>
+
+<Footer-selector></Footer-selector>
+
+
+  
+    
+ 

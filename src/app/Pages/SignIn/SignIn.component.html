@@ -1,0 +1,66 @@
+<div class=" d-flex align-items-center justify-content-center" style="height: 100vh; width: 100vw;">
+  <div class="container w-25 border border-secondary border-4">
+    <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="email" class="form-label">Email: </label>
+        <input
+          id="email"
+          type="text"
+          class="form-control"
+          formControlName="email"
+        />
+        <span
+          class="error"
+          *ngIf="
+            signInForm.get('email')!.hasError('required') &&
+            signInForm.get('email')!.touched
+          "
+        >
+          email is required</span
+        >
+        <span
+          class="error"
+          *ngIf="
+            signInForm.get('email')!.hasError('email') &&
+            signInForm.get('email')!.touched
+          "
+        >
+          invalid email</span
+        >
+      </div>
+
+      <div>
+        <label for="password" class="form-label">password: </label>
+        <input
+          id="password"
+          type="password"
+          class="form-control"
+          formControlName="password"
+        />
+        <span
+          class="error"
+          *ngIf="
+            signInForm.get('password')!.hasError('required') &&
+            signInForm.get('password')!.touched
+          "
+        >
+          password is required</span
+        >
+      </div>
+      <div class="text-center mt-2 mb-2">
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="!signInForm.valid"
+        >
+          Sign In
+        </button>
+        <p class="error mt-1" *ngIf="errors"> {{ errors }}</p>
+      </div>
+
+      <div class="text-center mb-2">
+        <span class="clickItem " (click)="signUp()"> I haven't an account</span>
+      </div>
+    </form>
+  </div>
+</div>
