@@ -18,6 +18,8 @@ import { CarouselComponent } from './Components/Carousel/Carousel.component';
 import { CardDetailsComponent } from './Pages/CardDetails/CardDetails.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NotFoundComponent } from './Pages/NotFound/NotFound.component';
+import { AdminProductsComponent } from './Pages/AdminProducts/admin-products.component';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { NotFoundComponent } from './Pages/NotFound/NotFound.component';
     FooterComponent,
     CarouselComponent,
     CardDetailsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AdminProductsComponent
   ],
   imports: [
     BrowserModule,

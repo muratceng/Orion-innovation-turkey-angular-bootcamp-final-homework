@@ -1,5 +1,6 @@
 import {  NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminProductsComponent } from './Pages/AdminProducts/admin-products.component';
 import { CardDetailsComponent } from './Pages/CardDetails/CardDetails.component';
 import { DashboardComponent } from './Pages/Dashboard/Dashboard.component';
 import { NotFoundComponent } from './Pages/NotFound/NotFound.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
     path : 'Product/Details/:id',
     component:ProductDetailsComponent
   },
+  {path:'AdminProducts',component:AdminProductsComponent},
   {
     path: 'SignUp',
     component: SignUpComponent,
