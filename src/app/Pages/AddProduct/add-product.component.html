@@ -42,12 +42,12 @@
   
         <div>
           <label for="password" class="form-label">Description: </label>
-          <input
+          <textarea
             id="description"
             type="text"
             class="form-control"
             formControlName="description"
-          />
+          ></textarea>
           <span
             class="error"
             *ngIf="
@@ -58,31 +58,29 @@
             Description is required</span
           >
         </div>
+
+        <div class="mt-5">
+        <button class="btn btn-primary" type="button" (click)="addImages()"><fa-icon [icon]="faAdd"></fa-icon> Add image</button>
+        <button class="btn btn-danger" type="button" (click)="removeImages()"><fa-icon [icon]="faAdd"></fa-icon> Remove image</button>
+      </div>
   
-        <div>
-          <label for="passwordCheck" class="form-label">Images </label>
+      <div formArrayName="images">
+        <div *ngFor="let item of images; let i = index">
+          <label for="passwordCheck" class="form-label">Image[{{i}}] </label>
           <input
-            id="images"
+            id="images{{i}}"
             type="text"
             class="form-control"
-            formControlName="images"
+            formControlName="{{i}}"
           />
-          <span
-            class="error"
-            *ngIf="
-              addProductForm.get('images')!.hasError('required') &&
-              addProductForm.get('images')!.touched
-            "
-          >
-            Images is required</span
-          >
         </div>
+      </div>
 
         <div>
             <label for="passwordCheck" class="form-label">Price </label>
             <input
               id="price"
-              type="text"
+              type="number"
               class="form-control"
               formControlName="price"
             />
