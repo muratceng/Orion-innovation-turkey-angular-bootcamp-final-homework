@@ -1,1 +1,150 @@
-<p>add-product works!</p>
+<Navbar-selector></Navbar-selector>
+
+<div class="container">
+    <form [formGroup]="addProductForm" (ngSubmit)="onSubmit()">
+        <div>
+          <label class="form-label" for="name">Title: </label>
+          <input
+            id="title"
+            type="text"
+            class="form-control"
+            formControlName="title"
+          />
+          <span
+            class="error"
+            *ngIf="
+              addProductForm.get('title')!.hasError('required') &&
+              addProductForm.get('title')!.touched
+            "
+          >
+            Title is required</span
+          >
+        </div>
+  
+        <div class="">
+          <label for="email" class="form-label">Short Description: </label>
+          <input
+            id="shortdescription"
+            type="text"
+            class="form-control"
+            formControlName="shortdescription"
+          />
+          <span
+            class="error"
+            *ngIf="
+              addProductForm.get('shortdescription')!.hasError('required') &&
+              addProductForm.get('shortdescription')!.touched
+            "
+          >
+            Short Description is required</span
+          >
+        </div>
+  
+        <div>
+          <label for="password" class="form-label">Description: </label>
+          <input
+            id="description"
+            type="text"
+            class="form-control"
+            formControlName="description"
+          />
+          <span
+            class="error"
+            *ngIf="
+              addProductForm.get('description')!.hasError('required') &&
+              addProductForm.get('description')!.touched
+            "
+          >
+            Description is required</span
+          >
+        </div>
+  
+        <div>
+          <label for="passwordCheck" class="form-label">Images </label>
+          <input
+            id="images"
+            type="text"
+            class="form-control"
+            formControlName="images"
+          />
+          <span
+            class="error"
+            *ngIf="
+              addProductForm.get('images')!.hasError('required') &&
+              addProductForm.get('images')!.touched
+            "
+          >
+            Images is required</span
+          >
+        </div>
+
+        <div>
+            <label for="passwordCheck" class="form-label">Price </label>
+            <input
+              id="price"
+              type="text"
+              class="form-control"
+              formControlName="price"
+            />
+            <span
+              class="error"
+              *ngIf="
+                addProductForm.get('price')!.hasError('required') &&
+                addProductForm.get('price')!.touched
+              "
+            >
+              Price is required</span
+            >
+          </div>
+
+          <div>
+            <label for="passwordCheck" class="form-label">Main Category </label>
+            <select class="form-control" formControlName="maincategory" id="maincategory">
+                <option *ngFor="let item of maincategory">
+                  {{ item }}
+                </option>
+              </select>
+            <span
+              class="error"
+              *ngIf="
+                addProductForm.get('maincategory')!.hasError('required') &&
+                addProductForm.get('maincategory')!.touched
+              "
+            >
+              Main Category is required</span
+            >
+          </div>
+
+          <div>
+            <label for="passwordCheck" class="form-label">Sub Category </label>
+            <select class="form-control" formControlName="category" id="category">
+                <option *ngFor="let item of maincategory">
+                  {{ item }}
+                </option>
+            </select>
+            <span
+              class="error"
+              *ngIf="
+                addProductForm.get('category')!.hasError('required') &&
+                addProductForm.get('category')!.touched
+              "
+            >
+              Category is required</span
+            >
+          </div>
+
+  
+        <div class="text-center">
+          <button
+            type="submit"
+            class="btn btn-primary mt-2 mb-2"
+            [disabled]="!addProductForm.valid"
+          >
+            Add Product
+          </button>
+        </div>
+  
+      </form>
+</div>
+
+<Footer-selector></Footer-selector>

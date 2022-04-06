@@ -21,6 +21,7 @@ import { NotFoundComponent } from './Pages/NotFound/NotFound.component';
 import { AdminProductsComponent } from './Pages/AdminProducts/admin-products.component';
 import {TableModule} from 'primeng/table';
 import { AddProductComponent } from './Pages/AddProduct/add-product.component';
+import { EditProductComponent } from './Pages/EditProduct/edit-product.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { AddProductComponent } from './Pages/AddProduct/add-product.component';
     CardDetailsComponent,
     NotFoundComponent,
     AdminProductsComponent,
-    AddProductComponent
+    AddProductComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,
