@@ -40,4 +40,8 @@ export class AdminProductsComponent implements OnInit {
     this.router.navigate(['AddProduct']);
   }
 
+  goEdit(id:number){
+    this.router.navigate(['EditProduct',id])
+  }
+
 }

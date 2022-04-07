@@ -18,21 +18,21 @@ export class ProductDetailsComponent implements OnInit {
   currentImage!: String;
   currentUser !: User;
   showMessage = false;
-  constructor(private productService: ProductService, private route: Router, private router: ActivatedRoute, private cardService: ShoppingCardService, private userService: UserService) { }
+  constructor(private productService: ProductService, private router: Router, private activatedRouter: ActivatedRoute, private cardService: ShoppingCardService, private userService: UserService) { }
 
   ngOnInit(): void {
-    this.productService.getProductById(this.router.snapshot.params['id']).subscribe((res) => {
+    this.productService.getProductById(this.activatedRouter.snapshot.params['id']).subscribe((res) => {
 
       this.product = res as Product
     },(err)=>{
-      this.route.navigate(['./Dashboard']);
+      this.router.navigate(['./Dashboard']);
     })
 
     //kullanıcı girişi varsa currentUser a eşitler yoksa giriş ekranına yönlendirir.
     if (this.userService.isLogIn()) {
       this.currentUser = this.userService.getLocalStorage();
     } else {
-      this.route.navigate(['./SignIn'])
+      this.router.navigate(['./SignIn'])
     }
   }
 
