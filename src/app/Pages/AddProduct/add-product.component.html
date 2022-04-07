@@ -61,17 +61,17 @@
 
         <div class="mt-5">
         <button class="btn btn-primary" type="button" (click)="addImages()"><fa-icon [icon]="faAdd"></fa-icon> Add image</button>
-        <button class="btn btn-danger" type="button" (click)="removeImages()"><fa-icon [icon]="faAdd"></fa-icon> Remove image</button>
+        <button class="btn btn-danger" type="button" (click)="removeImages()"><fa-icon [icon]="faDelete"></fa-icon> Remove image</button>
       </div>
   
       <div formArrayName="images">
-        <div *ngFor="let item of images; let i = index">
+        <div *ngFor="let item of getControls(); let i = index" [formGroupName]="i">
           <label for="passwordCheck" class="form-label">Image[{{i}}] </label>
           <input
             id="images{{i}}"
             type="text"
             class="form-control"
-            formControlName="{{i}}"
+            formControlName="image"
           />
         </div>
       </div>
@@ -98,6 +98,7 @@
           <div>
             <label for="passwordCheck" class="form-label">Main Category </label>
             <select class="form-control" formControlName="maincategory" id="maincategory">
+              <option disabled="true">Choose a main category</option>
                 <option *ngFor="let item of maincategory">
                   {{ item }}
                 </option>
