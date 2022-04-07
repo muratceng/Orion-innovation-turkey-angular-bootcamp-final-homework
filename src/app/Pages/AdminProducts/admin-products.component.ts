@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { faAdd, faDeleteLeft, faEdit, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Table } from 'primeng/table';
 import { Product } from 'src/app/models/Product.model';
@@ -11,7 +12,7 @@ import { ProductService } from 'src/app/services/ProductService.service';
 })
 export class AdminProductsComponent implements OnInit {
 
-  constructor(private productService:ProductService) { }
+  constructor(private productService:ProductService, private router:Router ) { }
   products!:Product[];
   fadelete = faDeleteLeft;
   faEdit = faEdit;
@@ -33,6 +34,10 @@ export class AdminProductsComponent implements OnInit {
 
   applyFilterGlobal($event: any, stringVal: any) {
     this.dt!.filterGlobal(($event.target as HTMLInputElement).value, stringVal);
+  }
+
+  goAddProduct(){
+    this.router.navigate(['AddProduct']);
   }
 
 }

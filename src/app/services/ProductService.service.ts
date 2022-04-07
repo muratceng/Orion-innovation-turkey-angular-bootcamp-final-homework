@@ -59,4 +59,8 @@ export class ProductService{
     filterByName<T>(filterText:string):Observable<T>{
         return this.http.get<T>(BASE_API+"?title_like="+filterText)
     }
+
+    addProduct<T>(product:any):Observable<T>{
+        return this.http.post<T>(BASE_API,product)
+    }
 }

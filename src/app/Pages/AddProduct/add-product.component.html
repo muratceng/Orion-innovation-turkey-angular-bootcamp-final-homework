@@ -97,10 +97,10 @@
 
           <div>
             <label for="passwordCheck" class="form-label">Main Category </label>
-            <select class="form-control" formControlName="maincategory" id="maincategory">
-              <option disabled="true">Choose a main category</option>
-                <option *ngFor="let item of maincategory">
-                  {{ item }}
+            <select class="form-control" (change)='getSubCategories(val.value)' #val formControlName="maincategory"  id="maincategory">
+                <option>Choose a main category</option>
+                <option *ngFor="let item of categories">
+                  {{ item.mainCategory }}
                 </option>
               </select>
             <span
@@ -117,7 +117,8 @@
           <div>
             <label for="passwordCheck" class="form-label">Sub Category </label>
             <select class="form-control" formControlName="category" id="category">
-                <option *ngFor="let item of maincategory">
+                <option>Choose a category</option>
+                <option *ngFor="let item of subCategories">
                   {{ item }}
                 </option>
             </select>
@@ -130,6 +131,12 @@
             >
               Category is required</span
             >
+            <span
+              class="error"
+              *ngIf="categoryError"
+            >
+              {{categoryError}}</span
+            >
           </div>
 
   
@@ -141,6 +148,7 @@
           >
             Add Product
           </button>
+          <button type="button" (click)="goBack()" class="btn btn-primary">Go back</button>
         </div>
   
       </form>

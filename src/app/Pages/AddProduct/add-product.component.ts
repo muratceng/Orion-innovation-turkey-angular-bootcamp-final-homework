@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { faAdd, faRemove } from '@fortawesome/free-solid-svg-icons';
+import { ProductService } from 'src/app/services/ProductService.service';
 
 @Component({
   selector: 'app-add-product',
@@ -10,11 +12,19 @@ import { faAdd, faRemove } from '@fortawesome/free-solid-svg-icons';
 export class AddProductComponent implements OnInit {
 
   addProductForm!:FormGroup;
-  maincategory:String[]=['Electronic','HomeandFurniture','Cosmetic','Sport','Clothes'];
+  Electronic:String[]=[]
   faAdd = faAdd;
   faDelete = faRemove;
+  categories = [{ mainCategory:"Electronic", subCategories: ['Television', 'Laptop', 'Playstation'] },
+    { mainCategory:"HomeandFurniture",  subCategories:['Furniture', 'Dinner set', 'Lamp'] },
+    { mainCategory:"Cosmetic", subCategories: ['Shampoo', 'Perfume', 'Lipgloss'] },
+    { mainCategory:"Sport", subCategories: ['Bike', 'Skateboard', 'Dumbbell'] },
+    { mainCategory:"Clothes", subCategories: ['Jacket', 'Pants', 'T-shirt'] }];
+  subCategories:String[]=[];
+  categoryError='';
 
-  constructor(private formBuilder:FormBuilder) { }
+
+  constructor(private formBuilder:FormBuilder,private productService:ProductService, private router:Router) { }
 
   ngOnInit(): void {
     this.createForm();
@@ -39,25 +49,33 @@ export class AddProductComponent implements OnInit {
   }
 
   onSubmit(){
-    let imageArray=[];
-    const formArray = this.addProductForm.get('images') as FormArray;
-    const images=formArray.controls['0'].value;
-
-    for(let i=0;i<formArray.length;i++){
-      imageArray.push(formArray.controls[i].get('image')?.value);
+    if(this.addProductForm.get('category')?.value == 'Choose a category'){
+      this.categoryError='You should choose category properly';
     }
-
-    const product ={
-      title:this.addProductForm.get('title')?.value,
-      shortdescription:this.addProductForm.get('shortdescription')?.value,
-      description:this.addProductForm.get('description')?.value,
-      images:imageArray,
-      price:this.addProductForm.get('price')?.value,
-      maincategory:this.addProductForm.get('maincategory')?.value,
-      category:this.addProductForm.get('category')?.value
+    else{
+      let imageArray=[];
+      const formArray = this.addProductForm.get('images') as FormArray;
+      const images=formArray.controls['0'].value;
+  
+      for(let i=0;i<formArray.length;i++){
+        imageArray.push(formArray.controls[i].get('image')?.value);
+      }
+  
+      const product ={
+        title:this.addProductForm.get('title')?.value,
+        shortdescription:this.addProductForm.get('shortdescription')?.value,
+        description:this.addProductForm.get('description')?.value,
+        images:imageArray,
+        price:this.addProductForm.get('price')?.value,
+        maincategory:this.addProductForm.get('maincategory')?.value,
+        category:this.addProductForm.get('category')?.value
+      }
+      this.productService.addProduct(product).subscribe((res)=>{
+      });
+      this.addProductForm.reset();
+      this.router.navigate(['AdminProducts']);
     }
-    console.log(product);
-    this.addProductForm.reset();
+    
   }
 
   addImages(){
@@ -74,5 +92,20 @@ export class AddProductComponent implements OnInit {
 
   getControls(){
     return (this.addProductForm.get('images') as FormArray).controls;
+  }
+
+  goBack(){
+    this.router.navigate(['AdminProducts']);
+  }
+
+  getSubCategories(val:string){
+    let category = this.categories.find((item)=>val==item.mainCategory)
+    console.log(category?.subCategories);
+    if(category?.subCategories){
+      this.subCategories = category?.subCategories;
+    }else{
+      this.subCategories=[];
+    }
+    
   }
 }
