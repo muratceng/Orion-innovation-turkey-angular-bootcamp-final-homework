@@ -46,7 +46,8 @@ export class SignUpComponent implements OnInit {
                 let user = {
                     name: this.signUpForm.get("name")?.value,
                     email: this.signUpForm.get("email")?.value,
-                    password: this.signUpForm.get("password")?.value
+                    password: this.signUpForm.get("password")?.value,
+                    role:'user'
                 }
                 this.userService.addUser(user).subscribe((res)=>{
                     console.log(res);
