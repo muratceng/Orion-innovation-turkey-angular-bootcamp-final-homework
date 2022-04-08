@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { faAdd, faDeleteLeft, faEdit, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Table } from 'primeng/table';
+import { ConfirmModalComponent } from 'src/app/Components/ConfirmModal/ConfirmModal.component';
 import { Product } from 'src/app/models/Product.model';
 import { ProductService } from 'src/app/services/ProductService.service';
 
@@ -12,7 +14,7 @@ import { ProductService } from 'src/app/services/ProductService.service';
 })
 export class AdminProductsComponent implements OnInit {
 
-  constructor(private productService:ProductService, private router:Router ) { }
+  constructor(private productService:ProductService, private router:Router, private modal:NgbModal ) { }
   products!:Product[];
   fadelete = faDeleteLeft;
   faEdit = faEdit;
@@ -46,9 +48,18 @@ export class AdminProductsComponent implements OnInit {
   }
 
   deleteProduct(id:string){
-    this.productService.deleteProduct(id).subscribe((res)=>{
-      this.ngOnInit();
+    this.modal.open(ConfirmModalComponent).result.then((res)=>{
+      console.log(res);
+      if(res=='Ok click'){
+        this.productService.deleteProduct(id).subscribe((res)=>{
+          this.ngOnInit();
+        })
+      }
+    }).catch((err)=>{
+      console.log(err)
     })
+      
   }
+  
 
 }
