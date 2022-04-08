@@ -4,43 +4,50 @@
       "id": 1,
       "name": "murat",
       "email": "murat@test.com",
-      "password": "12"
+      "password": "12",
+      "role":"admin"
     },
     {
       "id": 2,
       "name": "ahmet",
       "email": "ahmet@test.com",
-      "password": "123456"
+      "password": "123456",
+      "role":"user"
     },
     {
       "id": 3,
       "name": "mehmet",
       "email": "mehmet@test.com",
-      "password": "123456"
+      "password": "123456",
+      "role":"user"
     },
     {
       "id": 4,
       "name": "ayşe",
       "email": "ayşe@test.com",
-      "password": "123456"
+      "password": "123456",
+      "role":"user"
     },
     {
       "name": "deneme",
       "email": "deneme@test.com",
       "password": "3455666",
-      "id": 6
+      "id": 6,
+      "role":"user"
     },
     {
       "name": "deneme",
       "email": "asdsa@test.com",
       "password": "5678",
-      "id": 7
+      "id": 7,
+      "role":"user"
     },
     {
       "name": "buket",
       "email": "buket@test.com",
       "password": "123",
-      "id": 8
+      "id": 8,
+      "role":"user"
     }
   ],
   "products": [

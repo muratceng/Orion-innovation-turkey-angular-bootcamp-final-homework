@@ -17,12 +17,6 @@ export class SignInComponent implements OnInit {
     errors: String = '';
 
     ngOnInit(): void {
-        //Kullanıcı girişi varsa sayfayı dashboarda yönlendirir.
-        if(this.userService.isLogIn()){
-            console.log("kullanıcı var")
-            this.router.navigate(['./Dashboard'])
-        }
-        
         this.createForm();
 
         //kullanıcı listesi doldurulur.

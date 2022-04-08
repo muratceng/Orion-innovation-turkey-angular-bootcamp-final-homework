@@ -58,4 +58,14 @@ export class UserService{
     writeLocalStorage(user: User) {
         localStorage.setItem('currentUser', JSON.stringify(user));
     }
+
+    isAdmin(){
+        if(this.isLogIn()){
+            let user:User=this.getLocalStorage()
+            if(user.role=='admin'){
+                return true;
+            }
+        }
+        return false;
+    }
 }

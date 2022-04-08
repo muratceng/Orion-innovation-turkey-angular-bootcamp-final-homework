@@ -1,6 +1,7 @@
 import {  NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from './guards/auth.guard';
+import { LoggedUserGuard } from './guards/LoggedUser.guard';
+import {  LoginPermissionGuard } from './guards/LoginPermission.guard';
 import { AddProductComponent } from './Pages/AddProduct/add-product.component';
 import { AdminProductsComponent } from './Pages/AdminProducts/admin-products.component';
 import { CardDetailsComponent } from './Pages/CardDetails/CardDetails.component';
@@ -14,22 +15,22 @@ import { SignUpComponent } from './Pages/SignUp/SignUp.component';
 const routes: Routes = [
   {
     path: 'SignIn',
-    component: SignInComponent,
+    component: SignInComponent, canActivate:[LoggedUserGuard]
   },
   {
     path : 'Product/Details/:id',
-    component:ProductDetailsComponent, canActivate:[AuthGuard]
+    component:ProductDetailsComponent, canActivate:[LoginPermissionGuard]
   },
   {path:'AddProduct',component:AddProductComponent},
   {path:'EditProduct/:id', component:EditProductComponent},
   {path:'AdminProducts',component:AdminProductsComponent},
   {
     path: 'SignUp',
-    component: SignUpComponent,
+    component: SignUpComponent, canActivate:[LoggedUserGuard]
   },
-  { path: 'Dashboard', component: DashboardComponent, canActivate:[AuthGuard] },
+  { path: 'Dashboard', component: DashboardComponent, canActivate:[LoginPermissionGuard] },
   { path: '', redirectTo: '/SignIn', pathMatch: 'full' },
-  {path:'CardDetails', component:CardDetailsComponent, canActivate:[AuthGuard]},
+  {path:'CardDetails', component:CardDetailsComponent, canActivate:[LoginPermissionGuard]},
   { path: '**', component:NotFoundComponent }
 ];
 
