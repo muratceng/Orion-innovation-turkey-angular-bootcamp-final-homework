@@ -1,5 +1,6 @@
 import {  NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminGuard } from './guards/Admin.guard';
 import { LoggedUserGuard } from './guards/LoggedUser.guard';
 import {  LoginPermissionGuard } from './guards/LoginPermission.guard';
 import { AddProductComponent } from './Pages/AddProduct/add-product.component';
@@ -21,9 +22,9 @@ const routes: Routes = [
     path : 'Product/Details/:id',
     component:ProductDetailsComponent, canActivate:[LoginPermissionGuard]
   },
-  {path:'AddProduct',component:AddProductComponent},
-  {path:'EditProduct/:id', component:EditProductComponent},
-  {path:'AdminProducts',component:AdminProductsComponent},
+  {path:'AddProduct',component:AddProductComponent, canActivate:[AdminGuard]},
+  {path:'EditProduct/:id', component:EditProductComponent, canActivate:[AdminGuard]},
+  {path:'AdminProducts',component:AdminProductsComponent, canActivate:[AdminGuard]},
   {
     path: 'SignUp',
     component: SignUpComponent, canActivate:[LoggedUserGuard]

@@ -18,11 +18,6 @@ export class SignUpComponent implements OnInit {
 
 
     ngOnInit(): void {
-        // eğer kullanıcı girişi varsa dashboarda yönlendirir.
-        if(this.userService.isLogIn()){
-            this.router.navigate(['/Dashboard']);
-        }
-
         this.userService.getUserList().subscribe((res)=>{
             this.users = res as User[];
         })
