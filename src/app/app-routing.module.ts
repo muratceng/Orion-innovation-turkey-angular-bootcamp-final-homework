@@ -1,5 +1,6 @@
 import {  NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
 import { AddProductComponent } from './Pages/AddProduct/add-product.component';
 import { AdminProductsComponent } from './Pages/AdminProducts/admin-products.component';
 import { CardDetailsComponent } from './Pages/CardDetails/CardDetails.component';
@@ -17,7 +18,7 @@ const routes: Routes = [
   },
   {
     path : 'Product/Details/:id',
-    component:ProductDetailsComponent
+    component:ProductDetailsComponent, canActivate:[AuthGuard]
   },
   {path:'AddProduct',component:AddProductComponent},
   {path:'EditProduct/:id', component:EditProductComponent},
@@ -26,9 +27,9 @@ const routes: Routes = [
     path: 'SignUp',
     component: SignUpComponent,
   },
-  { path: 'Dashboard', component: DashboardComponent },
+  { path: 'Dashboard', component: DashboardComponent, canActivate:[AuthGuard] },
   { path: '', redirectTo: '/SignIn', pathMatch: 'full' },
-  {path:'CardDetails', component:CardDetailsComponent},
+  {path:'CardDetails', component:CardDetailsComponent, canActivate:[AuthGuard]},
   { path: '**', component:NotFoundComponent }
 ];
 
