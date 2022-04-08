@@ -7,7 +7,7 @@ In this project, an e-commerce web application was developed where users can reg
 Clone the project
 
 ```bash
-  git clone https://github.com/164-orion-innovation-turkey-bootcamp/hafta4-odev-assignment-muratceng
+  git clone https://github.com/muratceng/Orion-innovation-turkey-angular-bootcamp-final-homework
 ```
 Install dependencies
 
