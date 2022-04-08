@@ -98,8 +98,7 @@
           <div>
             <label for="maincategory" class="form-label">Main Category </label>
             <select class="form-control" (change)='getSubCategories(val.value)' #val formControlName="maincategory"  id="maincategory">
-                <option>Choose a main category</option>
-                <option *ngFor="let item of categories">
+                <option *ngFor="let item of categories" [selected]="item.mainCategory == product.maincategory">
                   {{ item.mainCategory }}
                 </option>
               </select>
@@ -117,8 +116,7 @@
           <div>
             <label for="category" class="form-label">Sub Category </label>
             <select class="form-control" formControlName="category" id="category">
-                <option>Choose a category</option>
-                <option *ngFor="let item of subCategories">
+                <option *ngFor="let item of subCategories" [selected]="item == product.category">
                   {{ item }}
                 </option>
             </select>
@@ -148,7 +146,7 @@
           >
             Edit Product
           </button>
-          <button type="button" (click)="goBack()" class="btn btn-primary">Go back</button>
+          <button type="button" (click)="goBack()" class="btn btn-primary ms-2">Go back</button>
         </div>
   
       </form>

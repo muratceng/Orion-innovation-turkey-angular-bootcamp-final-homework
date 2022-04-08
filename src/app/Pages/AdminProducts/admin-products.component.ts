@@ -26,6 +26,7 @@ export class AdminProductsComponent implements OnInit {
       this.products = res as Product[];
       this.loading=false;
     })
+    console.log('oninit');
   }
 
   clear(table: Table) {
@@ -42,6 +43,12 @@ export class AdminProductsComponent implements OnInit {
 
   goEdit(id:number){
     this.router.navigate(['EditProduct',id])
+  }
+
+  deleteProduct(id:string){
+    this.productService.deleteProduct(id).subscribe((res)=>{
+      this.ngOnInit();
+    })
   }
 
 }

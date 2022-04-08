@@ -44,8 +44,8 @@ export class EditProductComponent implements OnInit {
         description: new FormControl(null, [Validators.required]),
         images: this.formBuilder.array([] ),
         price: new FormControl(null, [Validators.required]),
-        maincategory: new FormControl(null, [Validators.required]),
-        category: new FormControl(null, [Validators.required]),
+        maincategory: new FormControl(null),
+        category: new FormControl(null),
     });
   }
 
@@ -54,9 +54,8 @@ export class EditProductComponent implements OnInit {
     this.editProductForm.get('shortdescription')?.setValue(this.product.shortdescription);
     this.editProductForm.get('description')?.setValue(this.product.description);
     this.editProductForm.get('price')?.setValue(this.product.price);
-    this.editProductForm.get('maincategory')?.setValue(this.getMainCategory());
-    this.editProductForm.get('category')?.setValue(this.product.category);
 
+    this.getSubCategories(this.product.maincategory);
     for(let i=0;i<this.product.images.length;i++){
       this.addImages(this.product.images[i])
     }
@@ -74,7 +73,6 @@ export class EditProductComponent implements OnInit {
 
   getSubCategories(val:string){
     let category = this.categories.find((item)=>val==item.mainCategory)
-    console.log(category?.subCategories);
     if(category?.subCategories){
       this.subCategories = category?.subCategories;
     }else{
@@ -125,23 +123,17 @@ export class EditProductComponent implements OnInit {
         description:this.editProductForm.get('description')?.value,
         images:imageArray,
         price:this.editProductForm.get('price')?.value,
-        maincategory:this.editProductForm.get('maincategory')?.value,
-        category:this.editProductForm.get('category')?.value
+        maincategory:this.editProductForm.get('maincategory')?.value ? this.editProductForm.get('maincategory')?.value :this.product.maincategory,
+        category:this.editProductForm.get('category')?.value ? this.editProductForm.get('category')?.value : this.product.category
       }
       console.log(product)
-      // this.productService.addProduct(product).subscribe((res)=>{
-      // });
-      // this.editProductForm.reset();
-      // this.router.navigate(['AdminProducts']);
+       this.productService.updateProduct(product,this.product.id.toString()).subscribe((res)=>{
+      });
+      this.editProductForm.reset();
+      this.router.navigate(['AdminProducts']);
     }
   }
 
-  getMainCategory(){
-    let cat =this.categories.find((item)=>{
-      item.mainCategory == this.product.maincategory;
-    })
-    console.log(cat);
-    return ''
-  }
+  
 
 }

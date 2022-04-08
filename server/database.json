@@ -254,20 +254,8 @@
       ],
       "price": 12333,
       "maincategory": "Electronic",
-      "category": "Cosmetic",
+      "category": "Laptop",
       "id": 16
-    },
-    {
-      "title": "deneme",
-      "shortdescription": "deneme",
-      "description": "deneme",
-      "images": [
-        "https://productimages.hepsiburada.net/s/103/550/110000046587852.jpg/format:webp"
-      ],
-      "price": 21,
-      "maincategory": "Cosmetic",
-      "category": "Cosmetic",
-      "id": 17
     }
   ],
   "orders": [

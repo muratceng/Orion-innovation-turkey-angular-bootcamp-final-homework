@@ -63,4 +63,12 @@ export class ProductService{
     addProduct<T>(product:any):Observable<T>{
         return this.http.post<T>(BASE_API,product)
     }
+
+    updateProduct<T>(product:any,id:string):Observable<T>{
+        return this.http.put<T>(BASE_API+'/'+id,product)
+    }
+
+    deleteProduct<T>(id:string):Observable<T>{
+        return this.http.delete<T>(BASE_API+'/'+id)
+    }
 }

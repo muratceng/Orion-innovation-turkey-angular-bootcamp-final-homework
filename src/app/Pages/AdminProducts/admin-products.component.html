@@ -31,7 +31,7 @@
             <td>{{product.title}}</td>
             <td>{{product.maincategory}}</td>
             <td>{{product.price | currency : 'TRY '}}</td>
-            <td><button (click)="goEdit(product.id)" class="btn btn-primary me-2"><fa-icon [icon]="faEdit"></fa-icon></button> <button class="btn btn-danger"><fa-icon [icon]="fadelete"></fa-icon></button> </td>
+            <td><button (click)="goEdit(product.id)" class="btn btn-primary me-2"><fa-icon [icon]="faEdit"></fa-icon></button> <button (click)="deleteProduct(product.id)" class="btn btn-danger"><fa-icon [icon]="fadelete"></fa-icon></button> </td>
         </tr>
     </ng-template>
 </p-table>
