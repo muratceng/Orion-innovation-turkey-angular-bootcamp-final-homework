@@ -27,13 +27,6 @@ export class ProductDetailsComponent implements OnInit {
     },(err)=>{
       this.router.navigate(['./Dashboard']);
     })
-
-    //kullanıcı girişi varsa currentUser a eşitler yoksa giriş ekranına yönlendirir.
-    if (this.userService.isLogIn()) {
-      this.currentUser = this.userService.getLocalStorage();
-    } else {
-      this.router.navigate(['./SignIn'])
-    }
   }
 
   // ürün sepetine item ekler

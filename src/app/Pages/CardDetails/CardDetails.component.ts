@@ -14,19 +14,15 @@ import { UserService } from "../../services/UserService.service";
     styleUrls: ['./CardDetails.component.css']
 })
 export class CardDetailsComponent implements OnInit {
-    products = this.cardService.getItems();
-    totalPrice = this.cardService.getTotalPrice();
+    products !:ShoppingCardItem[];
+    totalPrice!:number;
     currentUser!: User;
     showMessage = false;
     faDelete = faDeleteLeft;
     constructor(private cardService: ShoppingCardService, private router: Router, private orderService: OrderService, private userService: UserService) { }
     ngOnInit(): void {
-        //kullanıcı girişi varsa currentUser a eşitler yoksa giriş ekranına yönlendirir.
-        if (this.userService.isLogIn()) {
-            this.currentUser = this.userService.getLocalStorage();
-        } else {
-            this.router.navigate(['./SignIn'])
-        }
+        this.products=this.cardService.getItems();
+        this.totalPrice= this.cardService.getTotalPrice();
     }
 
     // sepetteki ürünü siler sayfadaki ürünleri ve toplam fiyatı günceller.
