@@ -134,6 +134,14 @@ export class EditProductComponent implements OnInit {
     }
   }
 
-  
+  canExit():boolean{
+    if (this.editProductForm.dirty && !this.editProductForm.pristine) {
+      if (confirm('You have unsaved changes! Do you want to continue')) {
+        return true;
+      }
+      return false;
+    }
+    return true;
+  }
 
 }

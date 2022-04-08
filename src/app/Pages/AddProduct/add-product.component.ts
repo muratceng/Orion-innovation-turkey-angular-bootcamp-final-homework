@@ -3,7 +3,6 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@ang
 import { Router } from '@angular/router';
 import { faAdd, faRemove } from '@fortawesome/free-solid-svg-icons';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { UnSavedModalComponent } from 'src/app/Components/UnsavedModal/UnsavedModal.component';
 import { ProductService } from 'src/app/services/ProductService.service';
 
 @Component({
@@ -112,19 +111,14 @@ export class AddProductComponent implements OnInit {
   }
 
   canExit():boolean{
-    if(this.addProductForm.dirty && !this.addProductForm.pristine){
-      this.modal.open(UnSavedModalComponent).result.then((res)=>{
-        console.log(res);
-        if(res=='Ok click'){
-          return true;
-        }else{
-          return false;
-        }
-      }).catch((err)=>{
-        console.log(err)
-        return false;
-      })
+    if (this.addProductForm.dirty && !this.addProductForm.pristine) {
+      if (confirm('You have unsaved changes! Do you want to continue')) {
+        return true;
+      }
+      return false;
     }
     return true;
   }
+
+  
 }

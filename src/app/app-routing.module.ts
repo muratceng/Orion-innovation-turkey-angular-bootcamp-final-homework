@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminGuard } from './guards/Admin.guard';
 import { LoggedUserGuard } from './guards/LoggedUser.guard';
 import {  LoginPermissionGuard } from './guards/LoginPermission.guard';
-import { UnsavedChangesGuard } from './guards/UnSavedChanges.guard';
+import { AddUnsavedChangesGuard } from './guards/AddUnSavedChanges.guard';
 import { AddProductComponent } from './Pages/AddProduct/add-product.component';
 import { AdminProductsComponent } from './Pages/AdminProducts/admin-products.component';
 import { CardDetailsComponent } from './Pages/CardDetails/CardDetails.component';
@@ -13,6 +13,7 @@ import { NotFoundComponent } from './Pages/NotFound/NotFound.component';
 import { ProductDetailsComponent } from './Pages/ProductDetails/ProductDetails.component';
 import { SignInComponent } from './Pages/SignIn/SignIn.component';
 import { SignUpComponent } from './Pages/SignUp/SignUp.component';
+import { EditUnsavedChangesGuard } from './guards/EditUnSavedChanges.guard';
 
 const routes: Routes = [
   {
@@ -23,8 +24,8 @@ const routes: Routes = [
     path : 'Product/Details/:id',
     component:ProductDetailsComponent, canActivate:[LoginPermissionGuard]
   },
-  {path:'AddProduct',component:AddProductComponent, canActivate:[AdminGuard], canDeactivate:[UnsavedChangesGuard]},
-  {path:'EditProduct/:id', component:EditProductComponent, canActivate:[AdminGuard]},
+  {path:'AddProduct',component:AddProductComponent, canActivate:[AdminGuard], canDeactivate:[AddUnsavedChangesGuard]},
+  {path:'EditProduct/:id', component:EditProductComponent, canActivate:[AdminGuard], canDeactivate:[EditUnsavedChangesGuard]},
   {path:'AdminProducts',component:AdminProductsComponent, canActivate:[AdminGuard]},
   {
     path: 'SignUp',
