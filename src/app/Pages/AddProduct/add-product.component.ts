@@ -31,6 +31,7 @@ export class AddProductComponent implements OnInit {
     this.createForm();
   }
 
+  //FormGroup oluşturma fonksiyonu.
   createForm(){
     this.addProductForm = new FormGroup({
         title: new FormControl(null, [Validators.required]),
@@ -43,12 +44,14 @@ export class AddProductComponent implements OnInit {
     });
   }
 
+  //Dinamik FormArray oluşturmak için kullanılmıştır. FormGroup döner.
   createImageFormGroup(): FormGroup{
     return new FormGroup({
       'image': new FormControl(''),
     })
   }
 
+  //Formdan gelen değerleri product değişkenine atar ve onu post yaparak database e ekler.
   onSubmit(){
     if(this.addProductForm.get('category')?.value == 'Choose a category'){
       this.categoryError='You should choose category properly';
@@ -79,11 +82,13 @@ export class AddProductComponent implements OnInit {
     
   }
 
+  //yeni bir formgroup oluşturup onu FormArraya atar.
   addImages(){
     const images = this.addProductForm.get('images') as FormArray
     images.push(this.createImageFormGroup())
   }
 
+  //images FormArrayindeki son itemi siler.
   removeImages(){
     const images = this.addProductForm.get('images') as FormArray
       if (images.length > 1) {
@@ -91,14 +96,17 @@ export class AddProductComponent implements OnInit {
       } 
   }
 
+  //Htmlde kullanılması üzere images FormArrayinin controls'ünü döner.
   getControls(){
     return (this.addProductForm.get('images') as FormArray).controls;
   }
 
+  //Admin sayfasına yönlendirir.
   goBack(){
     this.router.navigate(['AdminProducts']);
   }
 
+  //Seçilen ana kategoriye göre alt kategorileri eşitler.
   getSubCategories(val:string){
     let category = this.categories.find((item)=>val==item.mainCategory)
     console.log(category?.subCategories);
@@ -110,6 +118,7 @@ export class AddProductComponent implements OnInit {
     
   }
 
+  //Eğer sayfada kaydedilmemiş değişiklik var ise onaylama sorusu çıkarır.
   canExit():boolean{
     if (this.addProductForm.dirty && !this.addProductForm.pristine) {
       if (confirm('You have unsaved changes! Do you want to continue')) {

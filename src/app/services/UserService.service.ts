@@ -59,6 +59,11 @@ export class UserService{
         localStorage.setItem('currentUser', JSON.stringify(user));
     }
 
+    /**
+     * This function check user for admin role.
+     * 
+     * @returns boolean
+     */
     isAdmin(){
         if(this.isLogIn()){
             let user:User=this.getLocalStorage()

@@ -37,6 +37,7 @@ export class EditProductComponent implements OnInit {
     
   }
 
+  //FormGroup oluşturma fonksiyonu.
   createForm(){
     this.editProductForm = new FormGroup({
         title: new FormControl(null, [Validators.required]),
@@ -49,6 +50,7 @@ export class EditProductComponent implements OnInit {
     });
   }
 
+  //Databaseden gelen product bilgilerini form değerlerine eşitler.
   fetchValue(){
     this.editProductForm.get('title')?.setValue(this.product.title);
     this.editProductForm.get('shortdescription')?.setValue(this.product.shortdescription);
@@ -61,16 +63,19 @@ export class EditProductComponent implements OnInit {
     }
   }
 
+  //Dinamik FormArray oluşturmak için kullanılmıştır. FormGroup döner.
   createImageFormGroup(value:string): FormGroup{
     return new FormGroup({
       'image': new FormControl(value),
     })
   }
 
+  //Admin sayfasına yönlendirir.
   goBack(){
     this.router.navigate(['AdminProducts']);
   }
 
+  //Seçilen ana kategoriye göre alt kategorileri eşitler.
   getSubCategories(val:string){
     let category = this.categories.find((item)=>val==item.mainCategory)
     if(category?.subCategories){
@@ -81,15 +86,18 @@ export class EditProductComponent implements OnInit {
     
   }
 
+  //Htmlde kullanılması üzere images FormArrayinin controls'ünü döner.
   getControls(){
     return (this.editProductForm.get('images') as FormArray).controls;
   }
 
+  //yeni bir formgroup oluşturup onu FormArraya atar.
   addImages(value:string){
     const images = this.editProductForm.get('images') as FormArray
     images.push(this.createImageFormGroup(value))
   }
 
+  //Bu sayfadaki product değişkenin images dizisini images FormArrayine Ekler.
   initialAddImages(){
     const images = this.editProductForm.get('images') as FormArray
     for(let i=0;i<this.product.images.length;i++){
@@ -97,6 +105,7 @@ export class EditProductComponent implements OnInit {
     }
   }
 
+  //images FormArrayindeki son itemi siler.
   removeImages(){
     const images = this.editProductForm.get('images') as FormArray
       if (images.length > 1) {
@@ -104,6 +113,7 @@ export class EditProductComponent implements OnInit {
       } 
   }
 
+  //Formdan gelen değerleri product değişkenine atar ve onu put yaparak database i günceller.
   onSubmit(){
     if(this.editProductForm.get('category')?.value == 'Choose a category'){
       this.categoryError='You should choose category properly';
@@ -134,6 +144,7 @@ export class EditProductComponent implements OnInit {
     }
   }
 
+  //Eğer sayfada kaydedilmemiş değişiklik var ise onaylama sorusu çıkarır.
   canExit():boolean{
     if (this.editProductForm.dirty && !this.editProductForm.pristine) {
       if (confirm('You have unsaved changes! Do you want to continue')) {

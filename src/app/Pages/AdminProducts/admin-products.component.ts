@@ -31,22 +31,27 @@ export class AdminProductsComponent implements OnInit {
     console.log('oninit');
   }
 
+  //tabloyu resetler.
   clear(table: Table) {
     table.clear();
   }
 
+  //tabloyu tanımlanan fieldlerdeki keywordlere bakarak filtreler.
   applyFilterGlobal($event: any, stringVal: any) {
     this.dt!.filterGlobal(($event.target as HTMLInputElement).value, stringVal);
   }
 
+  //AddProduct Sayfasına yönlendirir.
   goAddProduct(){
     this.router.navigate(['AddProduct']);
   }
 
+  //EditProduct Sayfasına yönlendirir.
   goEdit(id:number){
     this.router.navigate(['EditProduct',id])
   }
 
+  //Modal açar silme işlemi onaylanırsa databaseden ürünü siler.
   deleteProduct(id:string){
     this.modal.open(ConfirmModalComponent).result.then((res)=>{
       console.log(res);
