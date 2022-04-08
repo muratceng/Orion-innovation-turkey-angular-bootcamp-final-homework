@@ -1,9 +1,158 @@
 <Navbar-selector></Navbar-selector>
 
-<div class="container">
-    <div *ngIf="product">
-        {{product.title}}
-    </div>
+<div class="container" *ngIf="product">
+    <form [formGroup]="editProductForm" (ngSubmit)="onSubmit()">
+        <div>
+          <label class="form-label" for="title">Title: </label>
+          <input
+            id="title"
+            type="text"
+            class="form-control"
+            formControlName="title"
+          />
+          <span
+            class="error"
+            *ngIf="
+              editProductForm.get('title')!.hasError('required') &&
+              editProductForm.get('title')!.touched
+            "
+          >
+            Title is required</span
+          >
+        </div>
+  
+        <div class="">
+          <label for="shortdescription" class="form-label">Short Description: </label>
+          <input
+            id="shortdescription"
+            type="text"
+            class="form-control"
+            formControlName="shortdescription"
+          />
+          <span
+            class="error"
+            *ngIf="
+              editProductForm.get('shortdescription')!.hasError('required') &&
+              editProductForm.get('shortdescription')!.touched
+            "
+          >
+            Short Description is required</span
+          >
+        </div>
+  
+        <div>
+          <label for="description" class="form-label">Description: </label>
+          <textarea
+            id="description"
+            type="text"
+            class="form-control"
+            formControlName="description"
+          ></textarea>
+          <span
+            class="error"
+            *ngIf="
+              editProductForm.get('description')!.hasError('required') &&
+              editProductForm.get('description')!.touched
+            "
+          >
+            Description is required</span
+          >
+        </div>
+
+        <div class="mt-5">
+        <button class="btn btn-primary" type="button" (click)="addImages('')"><fa-icon [icon]="faAdd"></fa-icon> Add image</button>
+        <button class="btn btn-danger" type="button" (click)="removeImages()"><fa-icon [icon]="faDelete"></fa-icon> Remove image</button>
+      </div>
+  
+      <div formArrayName="images">
+        <div *ngFor="let item of getControls(); let i = index" [formGroupName]="i">
+          <label for="iamages" class="form-label">Image[{{i}}] </label>
+          <input
+            id="images{{i}}"
+            type="text"
+            class="form-control"
+            formControlName="image"
+          />
+        </div>
+      </div>
+
+        <div>
+            <label for="price" class="form-label">Price </label>
+            <input
+              id="price"
+              type="number"
+              class="form-control"
+              formControlName="price"
+            />
+            <span
+              class="error"
+              *ngIf="
+                editProductForm.get('price')!.hasError('required') &&
+                editProductForm.get('price')!.touched
+              "
+            >
+              Price is required</span
+            >
+          </div>
+
+          <div>
+            <label for="maincategory" class="form-label">Main Category </label>
+            <select class="form-control" (change)='getSubCategories(val.value)' #val formControlName="maincategory"  id="maincategory">
+                <option>Choose a main category</option>
+                <option *ngFor="let item of categories">
+                  {{ item.mainCategory }}
+                </option>
+              </select>
+            <span
+              class="error"
+              *ngIf="
+                editProductForm.get('maincategory')!.hasError('required') &&
+                editProductForm.get('maincategory')!.touched
+              "
+            >
+              Main Category is required</span
+            >
+          </div>
+
+          <div>
+            <label for="category" class="form-label">Sub Category </label>
+            <select class="form-control" formControlName="category" id="category">
+                <option>Choose a category</option>
+                <option *ngFor="let item of subCategories">
+                  {{ item }}
+                </option>
+            </select>
+            <span
+              class="error"
+              *ngIf="
+                editProductForm.get('category')!.hasError('required') &&
+                editProductForm.get('category')!.touched
+              "
+            >
+              Category is required</span
+            >
+            <span
+              class="error"
+              *ngIf="categoryError"
+            >
+              {{categoryError}}</span
+            >
+          </div>
+
+  
+        <div class="text-center">
+          <button
+            type="submit"
+            class="btn btn-primary mt-2 mb-2"
+            [disabled]="!editProductForm.valid"
+          >
+            Edit Product
+          </button>
+          <button type="button" (click)="goBack()" class="btn btn-primary">Go back</button>
+        </div>
+  
+      </form>
 </div>
+
 
 <Footer-selector></Footer-selector>

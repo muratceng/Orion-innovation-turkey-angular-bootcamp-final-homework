@@ -3,7 +3,7 @@
 <div class="container">
     <form [formGroup]="addProductForm" (ngSubmit)="onSubmit()">
         <div>
-          <label class="form-label" for="name">Title: </label>
+          <label class="form-label" for="title">Title: </label>
           <input
             id="title"
             type="text"
@@ -22,7 +22,7 @@
         </div>
   
         <div class="">
-          <label for="email" class="form-label">Short Description: </label>
+          <label for="shortdescription" class="form-label">Short Description: </label>
           <input
             id="shortdescription"
             type="text"
@@ -41,7 +41,7 @@
         </div>
   
         <div>
-          <label for="password" class="form-label">Description: </label>
+          <label for="description" class="form-label">Description: </label>
           <textarea
             id="description"
             type="text"
@@ -66,7 +66,7 @@
   
       <div formArrayName="images">
         <div *ngFor="let item of getControls(); let i = index" [formGroupName]="i">
-          <label for="passwordCheck" class="form-label">Image[{{i}}] </label>
+          <label for="iamages" class="form-label">Image[{{i}}] </label>
           <input
             id="images{{i}}"
             type="text"
@@ -77,7 +77,7 @@
       </div>
 
         <div>
-            <label for="passwordCheck" class="form-label">Price </label>
+            <label for="price" class="form-label">Price </label>
             <input
               id="price"
               type="number"
@@ -96,7 +96,7 @@
           </div>
 
           <div>
-            <label for="passwordCheck" class="form-label">Main Category </label>
+            <label for="maincategory" class="form-label">Main Category </label>
             <select class="form-control" (change)='getSubCategories(val.value)' #val formControlName="maincategory"  id="maincategory">
                 <option>Choose a main category</option>
                 <option *ngFor="let item of categories">
@@ -115,7 +115,7 @@
           </div>
 
           <div>
-            <label for="passwordCheck" class="form-label">Sub Category </label>
+            <label for="category" class="form-label">Sub Category </label>
             <select class="form-control" formControlName="category" id="category">
                 <option>Choose a category</option>
                 <option *ngFor="let item of subCategories">
