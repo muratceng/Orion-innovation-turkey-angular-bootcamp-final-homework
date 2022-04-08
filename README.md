@@ -26,10 +26,15 @@ Start Server
 ```bash
   npm run start
 ```
+# Admin email and password
+
+email: admin@admin.com
+password: 123456
+
 
 # Used technologies and extensions
 
-HTML, CSS, Angular, Typescript, Javascript, Bootstrap, Json-server, ng-bootstrap, fontawesome
+HTML, CSS, Angular, Typescript, Javascript, Bootstrap, Json-server, ng-bootstrap, fontawesome, primeng
 
 # Functionalities
 
@@ -47,6 +52,9 @@ HTML, CSS, Angular, Typescript, Javascript, Bootstrap, Json-server, ng-bootstrap
 
 • The app supports responsive design.
 
+• Admin role can add,edit,delete product.
+
+
 
 # ScreenShots
 
@@ -56,3 +64,6 @@ HTML, CSS, Angular, Typescript, Javascript, Bootstrap, Json-server, ng-bootstrap
 ![products2](./src/assets/Products2.png)
 ![shoppingCard](./src/assets/ShoppingCard.png)
 ![notFound](./src/assets/NotFound.png)
+![adminPAge](./src/assets/AdminPage.png)
+![addProduct](./src/assets/AddProduct.png)
+![editProduct](./src/assets/EditProduct.png)
