@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { faCartShopping, faSignOut } from "@fortawesome/free-solid-svg-icons";
 import { ShoppingCardService } from "src/app/services/ShoppingCard.service";
+import { UserService } from "src/app/services/UserService.service";
 
 @Component({
     selector:'Navbar-selector',
@@ -9,12 +10,13 @@ import { ShoppingCardService } from "src/app/services/ShoppingCard.service";
     styleUrls:['./Navbar.component.css']
 })
 export class NavbarComponent implements OnInit{
-    constructor(private router:Router, private cardService:ShoppingCardService){}
+    constructor(private router:Router, private cardService:ShoppingCardService, private userService:UserService){}
     faShoppinCard = faCartShopping
     falogout = faSignOut
     shoppingCard=this.cardService.getItems();
+    isAdmin =false;
     ngOnInit(): void {
-        
+        this.isAdmin = this.userService.isAdmin();
     }
 
     // kullanıcı çıkışında localstoragei siler ve giriş ekranına yönlendirir.
@@ -39,4 +41,7 @@ export class NavbarComponent implements OnInit{
         this.shoppingCard=this.cardService.deleteFromCard(title);
     }
     
+    goAdmin(){
+        this.router.navigate(['AdminProducts']);
+    }
 }

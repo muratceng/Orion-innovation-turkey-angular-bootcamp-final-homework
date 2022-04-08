@@ -44,6 +44,7 @@
 
 
     </div>
+    <button *ngIf="isAdmin" (click)="goAdmin()" class="navbar-brand btn btn-link border border-secondary me-5">Admin Page</button>
     <button class="navbar-brand btn btn-link border border-secondary me-5" (click)="logOut()">
       <span><fa-icon [icon]="falogout"></fa-icon></span>
       logout
