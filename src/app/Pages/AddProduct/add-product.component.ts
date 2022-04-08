@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { faAdd, faRemove } from '@fortawesome/free-solid-svg-icons';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { UnSavedModalComponent } from 'src/app/Components/UnsavedModal/UnsavedModal.component';
 import { ProductService } from 'src/app/services/ProductService.service';
 
 @Component({
@@ -24,7 +26,7 @@ export class AddProductComponent implements OnInit {
   categoryError='';
 
 
-  constructor(private formBuilder:FormBuilder,private productService:ProductService, private router:Router) { }
+  constructor(private formBuilder:FormBuilder,private productService:ProductService, private router:Router, private modal:NgbModal) { }
 
   ngOnInit(): void {
     this.createForm();
@@ -107,5 +109,22 @@ export class AddProductComponent implements OnInit {
       this.subCategories=[];
     }
     
+  }
+
+  canExit():boolean{
+    if(this.addProductForm.dirty && !this.addProductForm.pristine){
+      this.modal.open(UnSavedModalComponent).result.then((res)=>{
+        console.log(res);
+        if(res=='Ok click'){
+          return true;
+        }else{
+          return false;
+        }
+      }).catch((err)=>{
+        console.log(err)
+        return false;
+      })
+    }
+    return true;
   }
 }

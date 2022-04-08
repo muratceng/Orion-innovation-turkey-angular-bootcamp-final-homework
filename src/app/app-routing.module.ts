@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminGuard } from './guards/Admin.guard';
 import { LoggedUserGuard } from './guards/LoggedUser.guard';
 import {  LoginPermissionGuard } from './guards/LoginPermission.guard';
+import { UnsavedChangesGuard } from './guards/UnSavedChanges.guard';
 import { AddProductComponent } from './Pages/AddProduct/add-product.component';
 import { AdminProductsComponent } from './Pages/AdminProducts/admin-products.component';
 import { CardDetailsComponent } from './Pages/CardDetails/CardDetails.component';
@@ -22,7 +23,7 @@ const routes: Routes = [
     path : 'Product/Details/:id',
     component:ProductDetailsComponent, canActivate:[LoginPermissionGuard]
   },
-  {path:'AddProduct',component:AddProductComponent, canActivate:[AdminGuard]},
+  {path:'AddProduct',component:AddProductComponent, canActivate:[AdminGuard], canDeactivate:[UnsavedChangesGuard]},
   {path:'EditProduct/:id', component:EditProductComponent, canActivate:[AdminGuard]},
   {path:'AdminProducts',component:AdminProductsComponent, canActivate:[AdminGuard]},
   {
